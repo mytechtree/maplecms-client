@@ -1,0 +1,28 @@
+{
+    "name": "techtree/maplecms-client",
+    "description": "This is the frontend client for maple cms",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raymend Ee",
+            "email": "raymond@techtree.my"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Techtree\\MaplecmsClient\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Techtree\\MaplecmsClient\\MapleCmsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
