@@ -6,7 +6,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Http;
 class ApiController extends Controller
 {
-    private $apiUrl = 'https://maple.tectree.website/api/';
+    private $apiUrl = 'https://maple.techtree.website/api/';
     private $apiId,$apiSecret,$sslVerify;
     public function __construct()
     {
