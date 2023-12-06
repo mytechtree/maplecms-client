@@ -7,11 +7,12 @@ use Illuminate\Support\Facades\Http;
 class ApiController extends Controller
 {
     private $apiUrl = 'https://maplecms.test/api/';
-    private $apiId,$apiSecret;
+    private $apiId,$apiSecret,$sslVerify;
     public function __construct()
     {
         $this->apiId = config('maplecms.api_id');
         $this->apiSecret = config('maplecms.api_secret');
+        $this->sslVerify = config('maplecms.ssl_verify');
     }
 
     public function getPage($tag)
@@ -29,6 +30,10 @@ class ApiController extends Controller
                 'x-api-id' => $this->apiId,
                 'x-api-secret' => $this->apiSecret,
             ]);
+
+        if(!$this->sslVerify){
+            $request->withoutVerifying();
+        }
 
         if($formParams){
             $request->asForm();
